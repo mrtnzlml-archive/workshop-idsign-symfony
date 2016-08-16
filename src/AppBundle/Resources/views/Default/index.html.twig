@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a href="{{ path('homepage') }}">
+        <h1>Správa kontaktů</h1>
+    </a>
+
+    <ul>
+        {% for contact in all %}
+            <li>{{ contact.id }}: {{ contact.name }} - {{ contact.email }}</li>
+        {% endfor %}
+    </ul>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+{% endblock %}
